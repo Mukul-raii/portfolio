@@ -1,31 +1,36 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BaggageClaim, Heart, School ,LayoutTemplateIcon} from "lucide-react";
 
 function AboutMeTabs() {
   return (
     <Tabs className="" defaultValue="aboutme">
-      <TabsList className="h-auto gap-12 rounded-none border-b border-border bg-transparent px-0 py-1 text-foreground">
+      <TabsList className="h-auto w-5/6 sm:w-full flex flex-wrap items-start justify-start sm:gap-12 gap-y-2 border-neutral-200 rounded-none border-b border-border bg-transparent px-0 py-1 text-foreground">
         <TabsTrigger
           value="aboutme"
           className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
         >
+          <Heart/>
           About me
         </TabsTrigger>
         <TabsTrigger
           value="experience"
           className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
         >
+          <BaggageClaim />
           Experience
         </TabsTrigger>
         <TabsTrigger
           value="education"
           className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
         >
+          <School/>
           Education
         </TabsTrigger>
         <TabsTrigger
           value="skills"
           className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
         >
+          < LayoutTemplateIcon/>
           Skills
         </TabsTrigger>
       </TabsList>

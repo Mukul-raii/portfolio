@@ -3,7 +3,8 @@ import React from "react";
 
 const Projectlist = {
   kioku: {
-    image: "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853692/941_1x_shots_so_hhetku.png",
+    image:
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853692/941_1x_shots_so_hhetku.png",
     alt: "kioku",
     Name: "Kioku",
     text: "Kioku is an AI-powered engagement platform focused on enhancing learning through adaptive testing and review scheduling",
@@ -11,7 +12,8 @@ const Projectlist = {
     LiveDemo: "https://",
   },
   axintract: {
-    image: "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853702/660_1x_shots_so_zvsyos.png",
+    image:
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853702/660_1x_shots_so_zvsyos.png",
     alt: "axintract",
     Name: "AxIntract",
     text: "An AI-powered engagement platform for optimizing user responses.",
@@ -19,7 +21,8 @@ const Projectlist = {
     LiveDemo: "https://intract-frontend-nx12.vercel.app/",
   },
   taskCombinator: {
-    image: "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853698/153_1x_shots_so_uwo1n8.png",
+    image:
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853698/153_1x_shots_so_uwo1n8.png",
     alt: "taskCombinator",
     Name: "Task Combinator",
     text: "A task management system supporting 500+ concurrent users.",
@@ -31,28 +34,32 @@ const Projectlist = {
 const Projects = () => {
   return (
     <div className="max-w-full flex flex-col  gap-16 my-16 justify-center items-center">
-      <div className="w-max py-3  px-9  rounded-full bg-gradient-to-r from-blue-300 to-purple-200 z-0">
-          <p className=" text-3xl font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent z-10">
-              Feautred Projects
+      <div className="flex flex-col justify-center items-center text-center gap-4">
+        <div className="w-max py-1 px-3 rounded-full bg-gradient-to-r from-blue-300 to-purple-200 flex justify-center">
+          <p className="text-md font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Portfolio
           </p>
         </div>
-      <div className="w-full flex flex-col  justify-center items-center px-36  gap-20 ">
+        <h1 className="text-3xl font-semibold">Featured Projects</h1>
+        <div className="w-20 border-b-4 border-black"></div>
+      </div>
+      <div className="w-full flex flex-col  justify-center items-center px-4 sm:px-36  gap-20 ">
         {Object.values(Projectlist).map((project, index) => (
           <Tilt key={index} rotationFactor={12} isReverse>
             <div
               style={{
                 borderRadius: "12px",
               }}
-              className="flex w-full flex-row overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900"
+              className="flex w-full flex-col md:flex-row overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900"
             >
               <div>
                 <img
                   src={project.image || "https://placehold.co/270x192"} // Fallback image if no image is provided
                   alt={project.alt}
-                  className="h-96 w-full object-cover"
+                  className="h-52 sm:h-96 w-full object-cover"
                 />
               </div>
-              <div className="flex flex-col items-start justify-center  p-10">
+              <div className="flex flex-col items-start justify-center p-8  sm:p-10">
                 <h1 className="text-3xl md:text-4xl font-bold py-4">
                   {project.Name}
                 </h1>
