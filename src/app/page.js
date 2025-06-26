@@ -9,16 +9,16 @@ export default function Home() {
   return (
     <div>
       <Docke />
-      <header id="home" className="flex items-center justify-center">
+      <header id="home" className="min-h-screen flex items-center justify-center">
         <Hero />
       </header>
-      <section id="about">
+      <section id="about" className="min-h-screen">
         <Aboutme />
       </section>
-      <section id="projects">
+      <section id="projects" className="min-h-screen">
         <Projects />
       </section>
-      <section id="contact">
+      <section id="contact" className="min-h-screen">
         <Contact />
       </section>
       <footer>
