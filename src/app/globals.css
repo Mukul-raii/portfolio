@@ -11,6 +11,7 @@ html {
 .font-features {
   font-feature-settings: "rlig" 1, "calt" 1;
 }
+
 @layer base {
   :root {
     --radius: 0.5rem;
@@ -88,5 +89,17 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .tab-trigger {
+    @apply relative flex items-center gap-2 rounded-md px-3 py-1
+           transition-all duration-300 ease-in-out
+           hover:bg-accent hover:text-foreground
+           data-[state=active]:bg-gradient-to-r
+           data-[state=active]:from-blue-500 data-[state=active]:to-purple-600
+           data-[state=active]:!text-white
+           data-[state=active]:shadow-none;
   }
 }

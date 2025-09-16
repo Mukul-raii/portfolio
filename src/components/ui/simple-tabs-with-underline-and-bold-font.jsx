@@ -4,38 +4,26 @@ import { BaggageClaim, Heart, School, LayoutTemplateIcon } from "lucide-react";
 function AboutMeTabs() {
   return (
     <Tabs className="" defaultValue="aboutme">
-      <TabsList className="h-auto w-5/6 sm:w-full flex flex-wrap  items-start justify-start sm:gap-8 gap-y-4 gap-x-6 border-neutral-200 rounded-none border-b border-border bg-transparent px-0 py-1 text-foreground">
-        <TabsTrigger
-          value="aboutme"
-          className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
-        >
+      <TabsList className="sticky top-0 z-10 h-auto w-full flex flex-wrap items-start justify-start sm:gap-8 gap-y-4 gap-x-6 border-b border-border bg-white px-0 py-1 text-foreground">
+        <TabsTrigger value="aboutme" className="tab-trigger">
           <Heart />
           About me
         </TabsTrigger>
-        <TabsTrigger
-          value="experience"
-          className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
-        >
+        <TabsTrigger value="experience" className="tab-trigger">
           <BaggageClaim />
           Experience
         </TabsTrigger>
-        <TabsTrigger
-          value="education"
-          className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
-        >
+        <TabsTrigger value="education" className="tab-trigger">
           <School />
           Education
         </TabsTrigger>
-        <TabsTrigger
-          value="skills"
-          className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
-        >
+        <TabsTrigger value="skills" className="tab-trigger">
           <LayoutTemplateIcon />
           Skills
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="aboutme">
-        <div className="flex flex-col gap-4 max-w-[476px] min-h-[344px] py-10">
+      <TabsContent value="aboutme" className="min-h-[344px]">
+        <div className="flex flex-col gap-4 max-w-[476px] min-h-[344px] py-4">
           <p>
             I build web apps with clean code. Working as an Frontend Developer
             Intern @Klimb
@@ -53,8 +41,8 @@ function AboutMeTabs() {
           </p>
         </div>
       </TabsContent>
-      <TabsContent value="experience">
-        <div className="py-10 max-w-[476px] min-h-[344px]">
+      <TabsContent value="experience" className="min-h-[344px]">
+        <div className="py-4 max-w-[476px] min-h-[344px]">
           <div className=" px-5 py-2  border-l-4">
             <p>May-Aug (2025)</p>
             <p className="font-bold">Frontend Developer Intern</p>
@@ -62,8 +50,8 @@ function AboutMeTabs() {
           </div>
         </div>
       </TabsContent>
-      <TabsContent value="education">
-        <div className="py-10 max-w-[476px] min-h-[344px]">
+      <TabsContent value="education" className="min-h-[344px]">
+        <div className="py-4 max-w-[476px] min-h-[344px]">
           <div className=" px-5 py-2  border-l-4  border-gray-200">
             <p>2023-2027</p>
             <p className="font-bold">B.Tech in Computer Science Engineering</p>
@@ -71,8 +59,8 @@ function AboutMeTabs() {
           </div>
         </div>
       </TabsContent>
-      <TabsContent value="skills">
-        <div className="grid grid-cols-2 gap-6 py-10 max-w-[476px] min-h-[344px]">
+      <TabsContent value="skills" className="min-h-[344px]">
+        <div className="grid grid-cols-2 gap-6 py-4 max-w-[476px] min-h-[344px]">
           {Object.entries(skills).map(([category, item]) => (
             <div className="bg-neutral-50 p-3 opacity-100" key={category}>
               <h4 className="mb-2 font-semibold">{category}</h4>

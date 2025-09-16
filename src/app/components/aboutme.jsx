@@ -55,41 +55,38 @@ export const Aboutme = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
-      className="min-h-screen w-full flex flex-col px-4 sm:flex-row items-center justify-center gap-10"
+      className="min-h-screen w-full flex flex-col px-4 sm:flex-row items-start justify-center gap-10"
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-      <motion.div 
-        className=""
-        variants={slideInFromLeft}
-      >
+      <motion.div className="sm:pt-20" variants={slideInFromLeft}>
         <motion.img
           src="https://framerusercontent.com/images/0u9nLJhQ0GmYXvXpzvQx551F70.gif"
           alt="Space Nebula"
-          className="w-full h-auto rounded-xl"
+          className="w-full max-w-md h-auto rounded-xl shadow-lg hover:shadow-xl "
           whileHover={{ scale: 1.05, rotate: 2 }}
+          whileTap={{ scale: 1.05, rotate: 2 }}
           transition={{ duration: 0.3 }}
         />
       </motion.div>
       {/* Right side: About and Tabs */}
-      <motion.div 
-        className=" max-w-screen-md sm:max-w-xl flex flex-col gap-8"
+      <motion.div
+        className="max-w-screen-md sm:max-w-xl flex flex-col items-start justify-center gap-4"
         variants={slideInFromRight}
       >
-        <motion.div 
-          className="text-4xl font-bold"
-          variants={fadeInUp}
-        >
-          <motion.div 
+        <motion.div className="text-4xl font-bold" variants={fadeInUp}>
+          <motion.div
             className=" w-max py-1  px-2 rounded-3xl bg-gradient-to-r from-blue-300 to-purple-200 z-0"
             initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+            animate={
+              isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }
+            }
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <motion.p 
+            <motion.p
               className=" text-sm font-extrabold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent z-10"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -107,6 +104,7 @@ export const Aboutme = () => {
           </motion.h1>
         </motion.div>
         <motion.div
+          className="w-full"
           variants={fadeInUp}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
