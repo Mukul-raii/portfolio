@@ -4,7 +4,7 @@ import { BaggageClaim, Heart, School, LayoutTemplateIcon } from "lucide-react";
 function AboutMeTabs() {
   return (
     <Tabs className="" defaultValue="aboutme">
-      <TabsList className="sticky top-0 z-10 h-auto w-full flex flex-wrap items-start justify-start sm:gap-8 gap-y-4 gap-x-6 border-b border-border bg-white px-0 py-1 text-foreground">
+      <TabsList className="z-10 h-auto w-full flex flex-wrap items-start justify-start sm:gap-8 gap-y-4 gap-x-6 border-b border-border bg-white px-0 py-1 text-foreground">
         <TabsTrigger value="aboutme" className="tab-trigger">
           <Heart />
           About me
