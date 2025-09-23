@@ -21,11 +21,11 @@ export function NavBar({ items, className }) {
   return (
     <div
       className={cn(
-        "fixed top-0 pointer-events-none  left-1/2 -translate-x-1/2 z-50 mb-6 pt-6",
+        "fixed top-0 pointer-events-none left-1/2 -translate-x-1/2 z-50 mb-6 pt-6 px-4",
         className
       )}
     >
-      <div className="pointer-events-auto flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="pointer-events-auto flex items-center gap-1 md:gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg max-w-[calc(100vw-2rem)] overflow-hidden">
         {items.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.name;
@@ -36,12 +36,12 @@ export function NavBar({ items, className }) {
               href={item.url}
               onClick={() => setActiveTab(item.name)}
               className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                "relative cursor-pointer text-sm font-semibold px-3 md:px-6 py-2 rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
                 isActive && "bg-white/30 backdrop-blur-md text-primary"
               )}
             >
-              <span className="hidden md:inline  text-black dark:text-white drop-shadow-lg">
+              <span className="hidden md:inline text-black dark:text-white drop-shadow-lg">
                 {item.name}
               </span>
               <span className="md:hidden text-black">

@@ -4,9 +4,11 @@
 
 body {
   @apply font-sans;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .font-features {
   font-feature-settings: "rlig" 1, "calt" 1;

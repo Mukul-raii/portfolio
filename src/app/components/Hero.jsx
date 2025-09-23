@@ -1,11 +1,23 @@
 "use client";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Force layout recalculation after component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+      // Force a layout recalculation
+      window.dispatchEvent(new Event("resize"));
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Animation variants
   const containerVariants = {
@@ -70,17 +82,19 @@ const Hero = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-screen flex items-center justify-center mx-auto px-4 mt-28 sm:px-6 lg:px-8"
+      className="min-h-screen w-full flex items-center justify-center px-4 mt-28 sm:px-6 lg:px-8 overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
+      style={{ minHeight: "100vh" }} // Force proper height calculation
     >
-      <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 md:gap-16 w-full max-w-6xl">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16 w-full max-w-7xl mx-auto">
         {/* Text Content */}
         <motion.div
-          className="flex flex-col items-center md:items-start text-center md:text-left flex-1"
+          className="flex flex-col items-center md:items-start text-center md:text-left flex-1 min-w-0"
           variants={slideInFromLeft}
         >
+          {/* ...existing code... */}
           <motion.div
             className="w-max py-1 px-3 rounded-3xl bg-gradient-to-r from-blue-300 to-purple-200 mb-4"
             variants={itemVariants}
@@ -158,8 +172,8 @@ const Hero = () => {
           >
             <motion.button
               className="w-full sm:w-auto py-2 px-6 rounded-xl border-2 text-sm md:text-base font-medium hover:bg-gray-50 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 1.4 }}
@@ -171,7 +185,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 1.6 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02 }}
             >
               Available for new project
             </motion.span>
@@ -190,8 +204,8 @@ const Hero = () => {
               rel="noopener noreferrer"
               aria-label="GitHub"
               className="hover:text-blue-600 transition p-2"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.1, rotate: 3 }}
+              whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, scale: 0 }}
               animate={
                 isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }
@@ -206,8 +220,8 @@ const Hero = () => {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="hover:text-blue-700 transition p-2"
-              whileHover={{ scale: 1.2, rotate: -5 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.1, rotate: -3 }}
+              whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, scale: 0 }}
               animate={
                 isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }
@@ -222,8 +236,8 @@ const Hero = () => {
               rel="noopener noreferrer"
               aria-label="Twitter"
               className="hover:text-sky-500 transition p-2"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.1, rotate: 3 }}
+              whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, scale: 0 }}
               animate={
                 isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }
@@ -237,10 +251,11 @@ const Hero = () => {
 
         {/* Image Container */}
         <motion.div
-          className="group relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-96 lg:w-96 lg:h-[28rem] p-0 mx-auto bg-gray-100 border-gray-200 rounded-2xl border-4 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:bg-neutral-100 hover:scale-105 flex items-center justify-center flex-shrink-0"
+          className="group relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-96 lg:w-80 lg:h-[26rem] bg-gray-100 border-gray-200 rounded-2xl border-4 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:bg-neutral-100 flex items-center justify-center"
           variants={slideInFromRight}
-          whileHover={{ scale: 1.05, rotateY: 5 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.01, rotateY: 1 }}
+          whileTap={{ scale: 0.99 }}
+          style={{ transformOrigin: "center" }}
         >
           <motion.div
             className="w-full h-full"
@@ -254,6 +269,7 @@ const Hero = () => {
               src="https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746870665/Tanjiro_Kamado_Demon_Slayer_Fanart_Wallpaper_yl7azu.jpg"
               alt="Mukul Rai"
               className="w-full h-full object-cover rounded-2xl transition-all duration-200 ease-in-out"
+              loading="eager"
             />
           </motion.div>
         </motion.div>
