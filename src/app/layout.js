@@ -27,36 +27,34 @@ export const metadata = {
     "Portfolio",
     "Web Developer",
   ],
-  authors: [{ name: "Mukul Rai", url: "https://portfolio.mukulrai.co.in" }],
+  authors: [{ name: "Mukul Rai", url: "https://mukulrai.me" }],
   creator: "Mukul Rai",
-  metadataBase: new URL("https://portfolio.mukulrai.co.in/"),
+  metadataBase: new URL("https://mukulrai.me/"),
 
   // -------------------------------------------------------------------
   // 🔑 1. ADDED/IMPROVED ICONS FOR FAVICON/SOCIAL CARD
   // -------------------------------------------------------------------
   icons: {
-    // Standard favicon.png is now the preferred modern format
-    icon: [
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    ],
-    // Apple touch icon for saving to iOS/Android home screens
-    apple: "/apple-touch-icon.png",
-    // Link to the main favicon file in the root
+    // Main favicon
+    icon: "/favicon.ico",
+    // Shortcut icon for older browsers
     shortcut: "/favicon.ico",
+    // Apple touch icon - using og-image as fallback until you add a proper one
+    apple: "/og-image.png",
   },
   openGraph: {
     title: "Mukul Rai | Full Stack Developer",
     description:
       "Explore Mukul Rai’s portfolio projects built with cutting-edge web technologies.",
-    url: "https://portfolio.mukulrai.co.in",
+    url: "https://mukulrai.me",
     siteName: "Mukul Rai Portfolio",
     images: [
       {
-        url: "https://portfolio.mukulrai.co.in/og-image.png",
+        url: "https://mukulrai.me/og-image.png",
         width: 1200,
         height: 630,
         alt: "Mukul Rai Portfolio Screenshot",
+        type: "image/png",
       },
     ],
     locale: "en_US",
@@ -69,7 +67,8 @@ export const metadata = {
     description:
       "Explore Mukul Rai’s web development portfolio and featured projects.",
     creator: "@mukulrai04",
-    images: ["https://portfolio.mukulrai.co.in/og-image.png"],
+    images: ["https://mukulrai.me/og-image.png"],
+    site: "@mukulrai04",
   },
 };
 
