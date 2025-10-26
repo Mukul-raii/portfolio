@@ -57,7 +57,7 @@ export const Aboutme = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-screen w-full flex flex-col px-4 sm:flex-row items-start justify-center gap-10"
+      className="min-h-fit w-full flex flex-col px-4 sm:flex-row items-start justify-center gap-10"
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}

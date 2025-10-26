@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply font-sans;
-  overflow-x: hidden;
-}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  height: 100%;
 }
+
+body {
+  @apply font-sans;
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .font-features {
   font-feature-settings: "rlig" 1, "calt" 1;
 }

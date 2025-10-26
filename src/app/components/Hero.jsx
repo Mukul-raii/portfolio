@@ -82,7 +82,7 @@ const Hero = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-screen w-full flex items-center justify-center px-4 mt-28 sm:px-6 lg:px-8 overflow-hidden"
+      className="py-20 w-full flex flex-col items-center justify-center gap-10 px-4 mt-28 sm:px-6 lg:px-8 overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}

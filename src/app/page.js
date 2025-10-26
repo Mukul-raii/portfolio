@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <div>
       <Docke />
-      <header id="home" className="min-h-screen flex items-center justify-center">
+      <header id="home" className="">
         <Hero />
       </header>
-      <section id="about" className="min-h-screen">
+      <section id="about" className="py-20">
         <Aboutme />
       </section>
       <section id="projects" className="min-h-screen">
