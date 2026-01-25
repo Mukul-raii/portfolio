@@ -73,24 +73,26 @@ const Projects = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
-      className="min-h-screen max-w-full flex flex-col gap-16 justify-center items-center px-4 pt-28"
+      className="min-h-screen max-w-full flex flex-col gap-16 justify-center items-center px-4 pt-20"
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-      <motion.div 
+      <motion.div
         className="flex flex-col justify-center items-center text-center gap-4"
         variants={fadeInUp}
       >
-        <motion.div 
+        <motion.div
           className="w-max py-1 px-3 rounded-full bg-gradient-to-r from-blue-300 to-purple-200 flex justify-center"
           initial={{ scale: 0, opacity: 0 }}
-          animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+          animate={
+            isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }
+          }
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <motion.p 
+          <motion.p
             className="text-md font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -99,7 +101,7 @@ const Projects = () => {
             Portfolio
           </motion.p>
         </motion.div>
-        <motion.h1 
+        <motion.h1
           className="text-3xl font-semibold"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -107,14 +109,16 @@ const Projects = () => {
         >
           Featured Projects
         </motion.h1>
-        <motion.div 
+        <motion.div
           className="w-20 border-b-4 border-black"
           initial={{ width: 0, opacity: 0 }}
-          animate={isInView ? { width: 80, opacity: 1 } : { width: 0, opacity: 0 }}
+          animate={
+            isInView ? { width: 80, opacity: 1 } : { width: 0, opacity: 0 }
+          }
           transition={{ duration: 0.8, delay: 0.8 }}
         />
       </motion.div>
-      <motion.div 
+      <motion.div
         className="w-full flex flex-col  justify-center items-center px-4 sm:px-36  gap-20"
         variants={containerVariants}
       >
@@ -138,7 +142,9 @@ const Projects = () => {
               >
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
+                  }
                   transition={{ duration: 0.8, delay: 1.2 + index * 0.2 }}
                 >
                   <img
@@ -147,32 +153,40 @@ const Projects = () => {
                     className="h-52 sm:h-96 w-full object-cover"
                   />
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="flex flex-col items-start justify-center p-8  sm:p-10"
                   initial={{ opacity: 0, x: 50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
+                  }
                   transition={{ duration: 0.8, delay: 1.4 + index * 0.2 }}
                 >
-                  <motion.h1 
+                  <motion.h1
                     className="text-3xl md:text-4xl font-bold py-4"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    animate={
+                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
                     transition={{ duration: 0.6, delay: 1.6 + index * 0.2 }}
                   >
                     {project.Name}
                   </motion.h1>
-                  <motion.p 
+                  <motion.p
                     className="max-w-[400px] mt-2 text-sm text-zinc-700 text-wrap"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    animate={
+                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
                     transition={{ duration: 0.6, delay: 1.8 + index * 0.2 }}
                   >
                     {project.text}
                   </motion.p>
-                  <motion.div 
+                  <motion.div
                     className="mt-4 flex gap-8 text-white"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    animate={
+                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                    }
                     transition={{ duration: 0.6, delay: 2.0 + index * 0.2 }}
                   >
                     {project.RepoLink && (
