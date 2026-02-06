@@ -89,6 +89,9 @@ body {
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.552 0.016 285.938);
   }
+  .theme {
+    --animate-grid: grid 15s linear infinite;
+  }
 }
 
 @layer base {
@@ -109,5 +112,16 @@ body {
            data-[state=active]:from-blue-500 data-[state=active]:to-purple-600
            data-[state=active]:!text-white
            data-[state=active]:shadow-none;
+  }
+}
+
+@theme inline {
+  @keyframes grid {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }

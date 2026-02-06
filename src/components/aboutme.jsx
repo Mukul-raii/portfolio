@@ -1,118 +1,99 @@
 "use client";
-import { AboutMeTabs } from "@/components/ui/simple-tabs-with-underline-and-bold-font";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-
-export const Aboutme = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const slideInFromLeft = {
-    hidden: { x: -100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const slideInFromRight = {
-    hidden: { x: 100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const fadeInUp = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
+import { Github, Linkedin, Twitter, Mail, Rocket } from "lucide-react";
+const Aboutme = () => {
   return (
-    <motion.div
-      ref={ref}
-      className="min-h-fit w-full flex flex-col px-4 sm:flex-row items-start justify-center gap-10"
-      variants={containerVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-    >
-      <motion.div className="sm:pt-20" variants={slideInFromLeft}>
-        <motion.img
-          src="https://framerusercontent.com/images/0u9nLJhQ0GmYXvXpzvQx551F70.gif"
-          alt="Space Nebula"
-          className="w-full max-w-md h-auto rounded-xl shadow-lg hover:shadow-xl "
-          whileHover={{ scale: 1.05, rotate: 2 }}
-          whileTap={{ scale: 1.05, rotate: 2 }}
-          transition={{ duration: 0.3 }}
-        />
-      </motion.div>
-      {/* Right side: About and Tabs */}
-      <motion.div
-        className="max-w-screen-md sm:max-w-xl flex flex-col items-start justify-center gap-4"
-        variants={slideInFromRight}
-      >
-        <motion.div className="text-4xl font-bold" variants={fadeInUp}>
-          <motion.div
-            className=" w-max py-1  px-2 rounded-3xl bg-gradient-to-r from-blue-300 to-purple-200 z-0"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={
-              isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }
-            }
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <motion.p
-              className=" text-sm font-extrabold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent z-10"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
+    <div className="min-h-auto w-full flex items-center justify-center px-2 sm:px-4 py-4">
+      <div className="max-w-3xl w-full px-2 sm:px-4">
+        {/* Description Section */}
+        <div className="space-y-4 mb-8">
+          <p className="text-sm sm:text-base  leading-relaxed">
+            I build web apps with clean code. Working as a Frontend Developer
+            Intern @Klimb
+          </p>
+          <p className="text-sm sm:text-base  leading-relaxed">
+            My journey began in 2023 and continues through 2025 as a B.Tech
+            student at @aktu. Along the way, I've developed a passion for clean,
+            efficient code and knowledge-sharing whether through participating
+            in college hackathons or engaging with students and seniors.
+          </p>
+          <p className="text-sm sm:text-base  leading-relaxed">
+            Tech stack isn't my concern, I'm flexible with whatever the project
+            needs, though I prefer modern frameworks and tools. I'm always open
+            for new opportunities to learn and grow.
+          </p>
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-row gap-3 sm:gap-4 mb-8">
+          <button className="px-4 py-2 rounded-[9px] border-2 border-gray-300 font-medium hover:bg-gray-50 transition text-sm sm:text-base">
+            Resume
+          </button>
+          <span className="text-green-500 border-green-600 font-medium py-2 px-4 sm:px-6 rounded-xl border-2 text-center text-sm sm:text-base">
+            Available for new project
+          </span>
+        </div>
+
+        {/* Social Links */}
+        <div className="w-full">
+          <p className="text-sm sm:text-base  font-medium mb-3">
+            Here are my socials
+          </p>
+          <div className="flex flex-wrap gap-2 sm:gap-3">
+            <a
+              href="https://github.com/Mukul-raii"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg transition text-xs sm:text-sm text-gray-700"
             >
-              About me
-            </motion.p>
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-          >
-            Developer by Choice
-          </motion.h1>
-        </motion.div>
-        <motion.div
-          className="w-full"
-          variants={fadeInUp}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          transition={{ delay: 1.1 }}
-        >
-          <AboutMeTabs />
-        </motion.div>
-      </motion.div>
-    </motion.div>
+              <Github size={16} className="flex-shrink-0" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://twitter.com/mukulrai04"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg transition text-xs sm:text-sm text-gray-700"
+            >
+              <Twitter size={16} className="flex-shrink-0" />
+              <span>Twitter</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mukulrai31"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg transition text-xs sm:text-sm text-gray-700"
+            >
+              <Linkedin size={16} className="flex-shrink-0" />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="mailto:devmukulrai27@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Gmail"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg transition text-xs sm:text-sm text-gray-700"
+            >
+              <Mail size={16} className="flex-shrink-0" />
+              <span>Gmail</span>
+            </a>
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Gmail"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg transition text-xs sm:text-sm text-gray-700"
+            >
+              <Rocket size={16} className="flex-shrink-0" />
+              <span className="whitespace-nowrap">Anonymous message</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
+
+export default Aboutme;

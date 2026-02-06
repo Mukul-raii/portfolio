@@ -1,227 +1,260 @@
 "use client";
-import { Tilt } from "@/components/ui/tilt";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-
-const Projectlist = {
-  kioku: {
-    image:
-      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853692/941_1x_shots_so_hhetku.png",
-    alt: "kioku",
-    Name: "Kioku",
-    text: "Kioku is an AI-powered engagement platform focused on enhancing learning through adaptive testing and review scheduling",
-    RepoLink: "https://github.com/Mukul-raii/Kioku",
-    LiveDemo: "https://",
-  },
-  axintract: {
-    image:
-      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853702/660_1x_shots_so_zvsyos.png",
-    alt: "axintract",
-    Name: "AxIntract",
-    text: "An AI-powered engagement platform for optimizing user responses.",
-    RepoLink: "https://github.com/Mukul-raii/Intract_Backend",
-    LiveDemo: "https://intract-frontend-nx12.vercel.app/",
-  },
-  taskCombinator: {
-    image:
-      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853698/153_1x_shots_so_uwo1n8.png",
-    alt: "taskCombinator",
-    Name: "Task Combinator",
-    text: "A task management system supporting 500+ concurrent users.",
-    RepoLink: "https://github.com/Mukul-raii/TaskCombinator",
-    LiveDemo: "https://taskcombinator.vercel.app/",
-  },
-};
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { projectsData } from "@/data/projectsData";
+import SectionWrapper from "./SectionWrapper";
 
 const Projects = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const fadeInUp = {
-    hidden: { y: 60, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const slideInFromBottom = {
-    hidden: { y: 100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
-    <motion.div
-      ref={ref}
-      className="min-h-screen max-w-full flex flex-col gap-16 justify-center items-center px-4 pt-20"
-      variants={containerVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-    >
-      <motion.div
-        className="flex flex-col justify-center items-center text-center gap-4"
-        variants={fadeInUp}
-      >
-        <motion.div
-          className="w-max py-1 px-3 rounded-full bg-gradient-to-r from-blue-300 to-purple-200 flex justify-center"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={
-            isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }
-          }
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <motion.p
-            className="text-md font-semibold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Portfolio
-          </motion.p>
-        </motion.div>
-        <motion.h1
-          className="text-3xl font-semibold"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          Featured Projects
-        </motion.h1>
-        <motion.div
-          className="w-20 border-b-4 border-black"
-          initial={{ width: 0, opacity: 0 }}
-          animate={
-            isInView ? { width: 80, opacity: 1 } : { width: 0, opacity: 0 }
-          }
-          transition={{ duration: 0.8, delay: 0.8 }}
-        />
-      </motion.div>
-      <motion.div
-        className="w-full flex flex-col  justify-center items-center px-4 sm:px-36  gap-20"
-        variants={containerVariants}
-      >
-        {Object.values(Projectlist).map((project, index) => (
-          <motion.div
-            key={index}
-            variants={slideInFromBottom}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ delay: 1 + index * 0.2 }}
-            whileHover={{ y: -10 }}
-          >
-            <Tilt rotationFactor={12} isReverse>
-              <motion.div
+    <>
+      <SectionWrapper>
+        <div className="min-h-auto w-full flex items-center justify-center px-4 ">
+          <div className="max-w-3xl w-full p-3 ">
+            <h1 className="text-xl font-bold text-gray-900 ">Project</h1>
+          </div>
+        </div>
+      </SectionWrapper>
+      <div className="min-h-auto w-full flex items-center justify-center ">
+        <div className="max-w-3xl w-full px-4 pb-4 sm:pb-4">
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 mb-8 relative">
+            {projectsData.map((project, index) => (
+              <div
+                key={index}
+                className="relative"
                 style={{
-                  borderRadius: "12px",
+                  borderRight: index % 2 === 0 ? "1px dashed #d1d5db" : "none",
+                  borderBottom: index < 2 ? "1px dashed #d1d5db" : "none",
                 }}
-                className="flex w-full flex-col md:flex-row overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
               >
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={
-                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                  }
-                  transition={{ duration: 0.8, delay: 1.2 + index * 0.2 }}
+                <Link
+                  href={`/project/${project.title
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                  className="group relative z-10 block"
                 >
-                  <img
-                    src={project.image || "https://placehold.co/270x192"}
-                    alt={project.alt}
-                    className="h-52 sm:h-96 w-full object-cover"
-                  />
-                </motion.div>
-                <motion.div
-                  className="flex flex-col items-start justify-center p-8  sm:p-10"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={
-                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
-                  }
-                  transition={{ duration: 0.8, delay: 1.4 + index * 0.2 }}
-                >
-                  <motion.h1
-                    className="text-3xl md:text-4xl font-bold py-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={
-                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                    }
-                    transition={{ duration: 0.6, delay: 1.6 + index * 0.2 }}
-                  >
-                    {project.Name}
-                  </motion.h1>
-                  <motion.p
-                    className="max-w-[400px] mt-2 text-sm text-zinc-700 text-wrap"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={
-                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                    }
-                    transition={{ duration: 0.6, delay: 1.8 + index * 0.2 }}
-                  >
-                    {project.text}
-                  </motion.p>
-                  <motion.div
-                    className="mt-4 flex gap-8 text-white"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={
-                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                    }
-                    transition={{ duration: 0.6, delay: 2.0 + index * 0.2 }}
-                  >
-                    {project.RepoLink && (
-                      <motion.a
-                        href={project.RepoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded bg-black  px-5 py-2 text-sm"
-                        whileHover={{ scale: 1.05, backgroundColor: "#333" }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        Repo Link
-                      </motion.a>
-                    )}
-                    {project.LiveDemo && (
-                      <motion.a
-                        href={project.LiveDemo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded bg-black px-5 py-2 text-sm"
-                        whileHover={{ scale: 1.05, backgroundColor: "#333" }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        Live Demo
-                      </motion.a>
-                    )}
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-            </Tilt>
-          </motion.div>
-        ))}
-      </motion.div>
-    </motion.div>
+                  <div className="p-3 overflow-hidden  ">
+                    {/* Status Badge */}
+                    {/* <div className="relative">
+                      <span className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-full text-gray-700 z-10">
+                        {project.status === "Completed"
+                          ? "Coming Soon"
+                          : "Building"}
+                      </span>
+                      {project.status === "Completed" && (
+                        <div className="absolute top-4 right-4 p-2 bg-white border border-gray-200 rounded-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <ExternalLink size={16} className="text-gray-600" />
+                        </div>
+                      )}
+                    </div> */}
+
+                    {/* Project Image */}
+                    <div className="p-[4px] rounded-[10px] border border-gray-200">
+                      <div className="relative w-full bg-gray-50 rounded-[6px] border border-gray-200 h-[200px] md:h-[200px] sm:h-[170px] overflow-hidden select-none">
+                        <div className="bg-white rounded-t-[6px] absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[75%] group-hover:h-[70%] transition-all duration-300 p-[2px] pb-0">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Project Info */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-xl font-bold ">{project.title}</h3>
+                        <div className="flex items-center gap-1">
+                          <span
+                            className={`w-2 h-2 rounded-full ${
+                              project.status === "Completed"
+                                ? "bg-green-500"
+                                : "bg-orange-500"
+                            }`}
+                          ></span>
+                          <span className="text-xs font-medium ">
+                            {project.status === "Completed"
+                              ? "Live"
+                              : "Building"}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-sm  mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
+                      <div className="flex items-center text-sm  transition-colors">
+                        <span>View Project</span>
+                        <ExternalLink size={14} className="ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/* View All Button */}
+          <div className="flex justify-center">
+            <button className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition font-medium">
+              View All
+              <ExternalLink size={16} />
+            </button>
+          </div>
+
+          {/* Horizontal dashed line */}
+          {/*    <div
+          className="w-full h-px"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(to right, #d1d5db 0px, #d1d5db 6px, transparent 6px, transparent 14px)",
+            backgroundSize: "100% 1px",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div> */}
+
+          {/* Dashed vertical line between columns */}
+          {/*    <div className="absolute left-1/2 top-0 h-full -translate-x-1/2 z-0 hidden md:block pointer-events-none">
+          <div
+            className="h-full w-px "
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(to bottom, #d1d5db 0px, #d1d5db 6px, transparent 6px, transparent 14px)",
+              backgroundSize: "1px 100%",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
+        </div>
+
+ */}
+        </div>
+      </div>
+    </>
   );
 };
 
 export default Projects;
+/*    className={`w-1.5 h-1.5 rounded-full ${
+                            project.status === "Completed"
+                              ? "bg-green-500"
+                              : "bg-orange-500"
+                          }`}
+                        ></span>
+                        {project.status === "Completed" ? "Live" : "Building"}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+                <ChevronDown
+                  className={`w-5 h-5 text-gray-400 transition-transform ml-4 flex-shrink-0 ${
+                    expandedIndex === index ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {expandedIndex === index && (
+                <div className="px-6 pb-6 pt-2 border-t border-gray-100">
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="sm:hidden text-sm text-gray-600 mb-4">
+                    <p className="text-xs">Timeline: {project.timeline}</p>
+                    <p className="text-xs">Role: {project.role}</p>
+                  </div>
+                  {project.features && project.features.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                        Key Features
+                      </h4>
+                      <ul className="space-y-2 ml-4">
+                        {project.features.map((feature, i) => (
+                          <li
+                            key={i}
+                            className="text-sm text-gray-700 list-disc"
+                          >
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {project.challenges && project.challenges.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                        Challenges
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.challenges.map((challenge, i) => (
+                          <span
+                            key={i}
+                            className="px-2.5 py-1 text-xs font-medium bg-orange-50 text-orange-700 rounded border border-orange-200"
+                          >
+                            {challenge}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                      Technologies
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded border border-gray-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex gap-3 pt-2">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition text-sm font-medium"
+                      >
+                        <Github size={16} />
+                        <span>View Code</span>
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition text-sm font-medium"
+                      >
+                        <ExternalLink size={16} />
+                        <span>Live Demo</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 flex justify-center">
+          <button className="flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition font-medium">
+            View All
+            <ExternalLink size={16} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
+ */
