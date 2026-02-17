@@ -1,6 +1,7 @@
 "use client";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { projectsData } from "@/data/projectsData";
 import SectionWrapper from "./SectionWrapper";
 
@@ -51,11 +52,18 @@ const Projects = () => {
                     {/* Project Image */}
                     <div className="p-[4px] rounded-[10px] border border-gray-200">
                       <div className="relative w-full bg-gray-50 rounded-[6px] border border-gray-200 h-[200px] md:h-[200px] sm:h-[170px] overflow-hidden select-none">
+                        <Image
+                          src={project.background}
+                          alt={project.title}
+                          fill
+                          className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        />
                         <div className="bg-white rounded-t-[6px] absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[75%] group-hover:h-[70%] transition-all duration-300 p-[2px] pb-0">
-                          <img
+                          <Image
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-full"
+                            fill
+                            className="object-contain"
                           />
                         </div>
                       </div>

@@ -34,6 +34,7 @@ export const projectsData = [
       "Load Balancing: Intelligent distribution of user requests",
       "Performance Monitoring: Built-in analytics for system health",
     ],
+    background: "/Gradients/bg.jpg",
   },
   {
     title: "AxIntract",
@@ -73,6 +74,7 @@ export const projectsData = [
       "Smart Recommendations: AI-driven suggestions for improved engagement",
       "Pattern Recognition: Advanced algorithms for identifying engagement trends",
     ],
+    background: "/Gradients/bg7.jpg",
   },
   {
     title: "Kioku",
@@ -111,6 +113,7 @@ export const projectsData = [
       "Spaced Repetition: Scientifically-backed review intervals for optimal retention",
       "Progress Tracking: Comprehensive dashboard for monitoring learning milestones",
     ],
+    background: "/Gradients/bg9.jpg",
   },
   {
     title: "Miss-Minutes",
@@ -159,5 +162,6 @@ export const projectsData = [
       "Language Breakdown: Analysis of which programming languages you use most",
       "Privacy First: Local storage with secure sync - never tracks your actual code",
     ],
+    background: "/Gradients/bg10.jpg",
   },
 ];

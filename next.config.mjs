@@ -4,7 +4,7 @@ import createMDX from "@next/mdx";
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com", "raw.githubusercontent.com"],
   },
 };
 
