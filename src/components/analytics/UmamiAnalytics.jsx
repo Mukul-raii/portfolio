@@ -9,8 +9,8 @@ export default function UmamiAnalytics() {
   return (
     <Script
       id="umami-analytics"
-      src="{umamiSrc}"
-      data-website-id="{umamiId}"
+      src={umamiSrc}
+      data-website-id={umamiId}
       strategy="afterInteractive"
       async
     />
