@@ -1,0 +1,58 @@
+---
+title: "Document Q&A Agent"
+repo: "https://github.com/Mukul-raii/next_bharat_assignment"
+tags: ["React", "TypeScript", "Vite", "FastAPI", "Azure", "AI", "OpenAI", "Fullstack", "Document QA"]
+---
+
+# 📄 Document Q&A Agent
+
+An intelligent document question-answering system powered by Azure AI services and OpenAI. Users can upload documents (PDF, JPG, PNG, DOCX) and ask questions about them using a modern chat interface.
+
+## 🚀 Features
+- **Document Upload**: Drag & drop or select files to upload and process.
+- **Session Management**: Local session IDs for tracking user documents and chat history.
+- **Real-time Status**: Track document processing and readiness.
+- **Interactive Chat**: Ask questions and get answers with references and similarity scores.
+- **Semantic Search**: Finds the most relevant document chunks for user queries.
+- **RAG Pipeline**: Retrieval Augmented Generation using Azure OpenAI.
+- **Architecture Diagrams & Screenshots**: Visual documentation for clarity.
+
+## 🛠️ Tech Stack
+- **Frontend**: React 18, TypeScript, Vite, Axios, Tailwind CSS
+- **Backend**: FastAPI (Python 3.11+), Azure Blob Storage, Azure Cosmos DB, Azure AI Search, Azure OpenAI
+
+## 🏁 Quick Start
+```bash
+# Backend
+cd Backend
+pip install -r requirements.txt
+python main.py
+
+# Frontend
+cd frontend
+npm install
+npm start
+```
+
+## 📦 Project Structure
+- `Backend/` — FastAPI server, Azure integration, business logic
+- `frontend/` — React app, chat UI, document management
+
+## 📋 API Endpoints
+| Method | Endpoint          | Description            |
+| ------ | ----------------- | ---------------------- |
+| GET    | `/`               | Health check           |
+| POST   | `/upload`         | Upload a document      |
+| GET    | `/documents`      | List all documents     |
+| GET    | `/documents/{id}` | Get document details   |
+| POST   | `/ask`            | Ask question (planned) |
+
+## 🏷️ Badges
+![React](https://img.shields.io/badge/React-18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100.0-green)
+![Azure](https://img.shields.io/badge/Azure-Cloud-blue)
+
+---
+
+Built with ❤️ using Azure, FastAPI, and React.

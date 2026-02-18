@@ -1,16 +1,21 @@
 "use client";
-import { ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { projectsData } from "@/data/projectsData";
-import SectionWrapper from "./SectionWrapper";
-
+import SectionWrapper from "@/components/SectionWrapper";
 const Projects = () => {
   return (
     <>
       <SectionWrapper>
         <div className="min-h-auto w-full flex items-center justify-center px-4 ">
-          <div className="max-w-3xl w-full p-3 ">
+          <div className="max-w-3xl w-full p-3 flex justify-start items-center gap-4">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <ArrowLeft size={16} />
+            </Link>
             <h1 className="text-xl font-bold text-gray-900 ">Project</h1>
           </div>
         </div>
@@ -19,7 +24,7 @@ const Projects = () => {
         <div className="max-w-3xl w-full px-4 pb-4 sm:pb-4">
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 mb-8 relative">
-            {projectsData.slice(0, 4).map((project, index) => (
+            {projectsData.map((project, index) => (
               <div
                 key={index}
                 className="relative"
@@ -33,6 +38,7 @@ const Projects = () => {
                   className="group relative z-10 block"
                 >
                   <div className="p-3 overflow-hidden  ">
+                    {/* Project Image */}
                     <div className="p-[4px] rounded-[10px] border border-gray-200">
                       <div className="relative w-full bg-[lab(95.36%_0_0)] rounded-[6px] border border-gray-200 h-[200px] md:h-[200px] sm:h-[170px] overflow-hidden select-none">
                         <Image
@@ -83,17 +89,6 @@ const Projects = () => {
                 </Link>
               </div>
             ))}
-          </div>
-
-          {/* View All Button */}
-          <div className="flex justify-center">
-            <Link
-              className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition font-medium"
-              href="/project"
-            >
-              View All
-              <ExternalLink size={16} />
-            </Link>
           </div>
         </div>
       </div>
