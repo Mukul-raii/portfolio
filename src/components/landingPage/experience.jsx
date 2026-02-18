@@ -1,7 +1,7 @@
 "use client";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import SectionWrapper from "./SectionWrapper";
+import SectionWrapper from "../SectionWrapper";
 
 const Experience = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);

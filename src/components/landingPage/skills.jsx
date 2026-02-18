@@ -1,6 +1,6 @@
 "use client";
 
-import SectionWrapper from "./SectionWrapper";
+import SectionWrapper from "../SectionWrapper";
 
 const Skills = () => {
   const skills = [

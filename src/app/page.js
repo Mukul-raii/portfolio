@@ -1,9 +1,9 @@
-import Hero from "../components/Hero";
+import Hero from "../components/landingPage/Hero";
 import Projects from "../components/projects";
-import Aboutme from "@/components/aboutme";
+import Aboutme from "@/components/landingPage/aboutme";
 import Footer from "../components/footer";
-import Experience from "@/components/experience";
-import Skills from "@/components/skills";
+import Experience from "@/components/landingPage/experience";
+import Skills from "@/components/landingPage/skills";
 import SectionWrapper from "@/components/SectionWrapper";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
