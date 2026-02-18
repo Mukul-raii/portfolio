@@ -1,3 +1,5 @@
+import { FlickeringGrid } from "./ui/flickering-grid";
+
 const PageWrapper = ({ children }) => {
   return (
     <div className="min-h-screen">
@@ -16,7 +18,28 @@ const PageWrapper = ({ children }) => {
         </div>
 
         <div className="max-w-3xl w-full flex items-center justify-center flex-col mx-auto relative z-10 px-4">
+          <FlickeringGrid
+            className=" size-full"
+            squareSize={4}
+            gridGap={6}
+            color="#6B7280"
+            maxOpacity={0.5}
+            flickerChance={0.1}
+            height={200}
+            width={740}
+          />
+
           {children}
+          <FlickeringGrid
+            className=" size-full p-2"
+            squareSize={4}
+            gridGap={6}
+            color="#6B7280"
+            maxOpacity={0.5}
+            flickerChance={0.1}
+            height={600}
+            width={760}
+          />
         </div>
         {/* Right Vertical line */}
         <div className="absolute left-1/2 ml-[384px] top-0 h-full z-0 hidden md:block pointer-events-none">

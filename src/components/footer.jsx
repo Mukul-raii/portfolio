@@ -22,16 +22,6 @@ const Footer = () => {
           successful."
         </blockquote>
         <p className="text-sm  uppercase tracking-wider">— ALEX HORMOZI —</p>
-        <FlickeringGrid
-          className=" size-full p-2"
-          squareSize={4}
-          gridGap={6}
-          color="#6B7280"
-          maxOpacity={0.5}
-          flickerChance={0.1}
-          height={600}
-          width={760}
-        />
       </div>
     </div>
   );
