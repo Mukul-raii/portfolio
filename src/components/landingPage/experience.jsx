@@ -1,37 +1,12 @@
 "use client";
+
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import SectionWrapper from "../SectionWrapper";
+import experiences from "../../data/experienceData";
 
 const Experience = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
-
-  const experiences = [
-    {
-      title: "Software Engineer",
-      company: "Klimb",
-      period: "Aug, 2025 - Present",
-      location: "Mumbai, India - Remote",
-      type: "Internship",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2TlYwRNVfQkc4RqTJeSJLhqLbhJUNu311g&s", // Replace with actual logo
-      logoColor: "bg-white",
-      achievements: [
-        "Owned the core presentation editor, driving major performance and reliability improvements",
-        "Designed and built core editor features like drag-and-drop, resize, and keyboard shortcuts end-to-end",
-        "Owned a foundational refactor, strengthening a critical codebase to enable safer and faster production",
-        "Drove major Drive page performance improvements, resolving bugs to deliver faster, reliable experiences",
-      ],
-      technologies: [
-        "Next",
-        "Tailwind",
-        "TypeScript",
-        "JavaScript",
-        "Express",
-        "PostgreSQL",
-        "Docker",
-      ],
-    },
-  ];
 
   const toggleExpand = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -42,7 +17,7 @@ const Experience = () => {
       <SectionWrapper>
         <div className="min-h-auto w-full flex items-center justify-center px-4 ">
           <div className="max-w-3xl w-full p-3  ">
-            <h1 className="text-xl font-bold text-gray-900 ">Experiences</h1>
+            <h1 className="text-xl font-bold  ">Experiences</h1>
           </div>
         </div>
       </SectionWrapper>
@@ -80,18 +55,16 @@ const Experience = () => {
                     {/* Info */}
                     <div className="flex-1 text-left">
                       <div className="flex items-center gap-3 mb-1">
-                        <h3 className="font-semibold text-gray-900">
-                          {exp.title}
-                        </h3>
-                        <span className="px-2 py-0.5 text-xs border border-gray-300 rounded text-gray-600">
+                        <h3 className="font-semibold ">{exp.title}</h3>
+                        <span className="px-2 py-0.5 text-xs border border-gray-300 rounded ">
                           {exp.type}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600">{exp.company}</p>
+                      <p className="text-sm ">{exp.company}</p>
                     </div>
 
                     {/* Period and Location */}
-                    <div className="text-right text-sm text-gray-600 hidden sm:block">
+                    <div className="text-right text-sm  hidden sm:block">
                       <p>{exp.period}</p>
                       <p className="text-xs">{exp.location}</p>
                     </div>
@@ -99,7 +72,7 @@ const Experience = () => {
 
                   {/* Chevron */}
                   <ChevronDown
-                    className={`w-5 h-5 text-gray-400 transition-transform ml-4 flex-shrink-0 ${
+                    className={`w-5 h-5  transition-transform ml-4 flex-shrink-0 ${
                       expandedIndex === index ? "rotate-180" : ""
                     }`}
                   />
@@ -109,7 +82,7 @@ const Experience = () => {
                 {expandedIndex === index && (
                   <div className=" pb-6 pt-2 border-t border-gray-100">
                     {/* Mobile Period/Location */}
-                    <div className="sm:hidden text-sm text-gray-600 mb-4">
+                    <div className="sm:hidden text-sm  mb-4">
                       <p>{exp.period}</p>
                       <p className="text-xs">{exp.location}</p>
                     </div>
@@ -117,7 +90,7 @@ const Experience = () => {
                     {/* Achievements */}
                     <ul className="space-y-2 mb-4 ml-4">
                       {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="text-sm text-gray-700 list-disc">
+                        <li key={i} className="text-sm list-disc">
                           {achievement}
                         </li>
                       ))}
@@ -131,12 +104,12 @@ const Experience = () => {
                           className="px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded border border-gray-200 flex flex-row gap-2"
                         >
                           <img
-                            src={`https://cdn.simpleicons.org/${tech}`}
-                            alt={tech}
+                            src={`https://cdn.simpleicons.org/${tech.icon}`}
+                            alt={tech.name}
                             width="16"
                             height="16"
                           />
-                          {tech}
+                          {tech.name}
                         </span>
                       ))}
                     </div>
