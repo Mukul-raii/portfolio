@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
 
           {/* Right Side Icons */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          {/*    <div className="flex items-center gap-2 sm:gap-4">
             <div className="flex items-center gap-1 sm:gap-2 ">
               <Eye size={18} className="sm:w-5 sm:h-5" />
               <span className="text-xs sm:text-sm">3.3k</span>
@@ -63,7 +63,7 @@ const Hero = () => {
                 <Moon size={18} className="sm:w-5 sm:h-5 " />
               )}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
