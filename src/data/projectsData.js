@@ -57,8 +57,9 @@ export const projectsData = [
     description:
       "An intelligent document question-answering system powered by Azure AI services and OpenAI. Users can upload documents (PDF, JPG, PNG, DOCX) and ask questions about them using a modern chat interface.",
     thumbnail:
-      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771412437/Screenshot_2026-02-18_at_16-30-27_Mukul-raii_next_bharat_assignment_xtjsb2.png",
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771412378/Screenshot_2026-02-18_at_16-29-23_Document_Q_A_Agent_zfnoge.png",
     images: [
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771412378/Screenshot_2026-02-18_at_16-29-23_Document_Q_A_Agent_zfnoge.png",
       "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771412437/Screenshot_2026-02-18_at_16-30-27_Mukul-raii_next_bharat_assignment_xtjsb2.png",
     ],
     video: "",

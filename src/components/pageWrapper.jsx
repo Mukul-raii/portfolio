@@ -19,7 +19,7 @@ const PageWrapper = ({ children }) => {
 
         <div className="max-w-3xl w-full flex items-center justify-center flex-col mx-auto relative z-10 px-4">
           <FlickeringGrid
-            className=" size-full"
+            className=" size-full pb-4"
             squareSize={4}
             gridGap={6}
             color="#6B7280"
@@ -31,14 +31,14 @@ const PageWrapper = ({ children }) => {
 
           {children}
           <FlickeringGrid
-            className=" size-full p-2"
+            className="size-full pt-4"
             squareSize={4}
             gridGap={6}
             color="#6B7280"
             maxOpacity={0.5}
             flickerChance={0.1}
             height={600}
-            width={760}
+            width={740}
           />
         </div>
         {/* Right Vertical line */}

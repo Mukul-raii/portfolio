@@ -1,5 +1,5 @@
-import Hero from "../components/landingPage/Hero";
-import Projects from "../components/projects";
+import Hero from "../components/landingPage/HeroWithViews";
+import Projects from "@/components/project/projects";
 import Aboutme from "@/components/landingPage/aboutme";
 import Footer from "../components/footer";
 import Experience from "@/components/landingPage/experience";

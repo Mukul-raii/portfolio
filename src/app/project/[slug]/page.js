@@ -5,7 +5,7 @@ import * as runtime from "react/jsx-runtime";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import ProjectMediaCarousel from "@/components/ProjectMediaCarousel";
+import ProjectMediaCarousel from "@/components/project/ProjectMediaCarousel";
 import { projectsData } from "@/data/projectsData";
 
 // Generate static params for all projects
