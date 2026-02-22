@@ -27,7 +27,7 @@ const Aboutme = () => {
         {/* Buttons */}
         <div className="flex flex-row gap-3 sm:gap-4 mb-8">
           <a
-            href="https://github.com/Mukul-raii"
+            href="https://drive.google.com/file/d/1DHpNHOCb7G25mn3lTaFmW22A_VYcLuBf/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Resume"
