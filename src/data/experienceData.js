@@ -8,10 +8,11 @@ const experiences = [
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2TlYwRNVfQkc4RqTJeSJLhqLbhJUNu311g&s",
     logoColor: "bg-white",
     achievements: [
-      "Owned the core presentation editor, driving major performance and reliability improvements",
-      "Designed and built core editor features like drag-and-drop, resize, and keyboard shortcuts end-to-end",
-      "Owned a foundational refactor, strengthening a critical codebase to enable safer and faster production",
-      "Drove major Drive page performance improvements, resolving bugs to deliver faster, reliable experiences",
+      "Built and optimized production frontend features for a recruitment platform using React.js, improving responsiveness and user experience",
+      "Developed and maintained cross-platform mobile features using React Native, ensuring feature parity with the web platform",
+      "Collaborated closely with backend engineers to integrate REST APIs and ensure scalable, reliable data flow",
+      "Implemented responsive UI components with accessibility best practices across devices",
+      "Worked in an agile remote environment, participating in sprint planning, stand-ups, and code reviews",
     ],
     technologies: [
       { name: "TypeScript", icon: "typescript" },
