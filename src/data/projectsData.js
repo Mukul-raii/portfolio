@@ -6,9 +6,11 @@ export const projectsData = [
     description:
       "A full-stack analytics platform for tracking, visualizing, and analyzing tech trends, open-source repositories, and community engagement. Built with a modern React + TypeScript frontend and a Node.js/Express backend, leveraging Azure services for data storage, search, and analytics.",
     thumbnail:
-      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771412378/Screenshot_2026-02-18_at_16-29-23_Document_Q_A_Agent_zfnoge.png",
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771744756/Screenshot_2026-02-22_at_12-36-09_react-ts_vkwoae.png",
     images: [
-      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771412378/Screenshot_2026-02-18_at_16-29-23_Document_Q_A_Agent_zfnoge.png",
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771744756/Screenshot_2026-02-22_at_12-36-09_react-ts_vkwoae.png",
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771744756/Screenshot_2026-02-22_at_12-37-08_react-ts_zlymww.png",
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771744756/Screenshot_2026-02-22_at_12-37-22_react-ts_bxernh.png",
     ],
     video: "",
     technologies: [
@@ -166,7 +168,7 @@ export const projectsData = [
     thumbnail:
       "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771410627/MlO8KT2xcfWBHBOs_c67gti_btezpg.jpg",
     images: [
-      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1746853692/941_1x_shots_so_hhetku.png",
+      "https://res.cloudinary.com/dmvzjbgwp/image/upload/v1771410627/MlO8KT2xcfWBHBOs_c67gti_btezpg.jpg",
     ],
     video:
       "https://res.cloudinary.com/dmvzjbgwp/video/upload/v1771409793/MlO8KT2xcfWBHBOs_c67gti.mp4",
