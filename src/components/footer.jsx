@@ -1,66 +1,29 @@
 "use client";
-import { ArrowBigRight, ArrowRight } from "lucide-react";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { RetroGrid } from "@/components/ui/retro-grid";
+import { FlickeringGrid } from "./ui/flickering-grid";
 
 const Footer = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
-
   return (
-    <motion.div
-      ref={ref}
-      className="max-w-full flex flex-col text-center sm:text-justify items-center justify-center  gap-6"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6 }}
-    >
-      <motion.div
-        className="max-w-full my-20 flex flex-row justify-center animate-bounce ease-in-out transition"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={
-          isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-        }
-        transition={{ duration: 0.6, delay: 0.2 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <motion.a
-          className=""
-          href="https://drive.google.com/file/d/1hNAF4Al665ENdMi1a4kk5-zvlV-cQ4QW/view?usp=sharing"
-          whileHover={{ color: "#3b82f6" }}
-        >
-          Download my Resume
-        </motion.a>
-        <motion.div
-          animate={{ x: [0, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          <ArrowRight />
-        </motion.div>
-      </motion.div>
-      <motion.div
-        className="w-full flex  items-center justify-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <motion.div
-          className="w-11/12 text-[10px] border-t-2 border-neutral-300  text-gray-600 p-4"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: "91.666667%" } : { width: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
+    <div className="w-full flex flex-col items-center justify-center pt-10 px-4 ">
+      {/* Quote Section */}
+      <div className="max-w-3xl w-full text-center ">
+        <div className="mb-6">
+          <svg
+            className="w-16 h-16 mx-auto text-gray-300"
+            fill="currentColor"
+            viewBox="0 0 24 24"
           >
-            Copyright © 2025 Mukul Rai. All rights reserved.
-          </motion.p>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+          </svg>
+        </div>
+        <blockquote className="text-2xl md:text-3xl font-medium italic  mb-6">
+          "Do so much work that it would be unreasonable for you to not be
+          successful."
+        </blockquote>
+        <p className="text-sm  uppercase tracking-wider">— ALEX HORMOZI —</p>
+      </div>
+    </div>
   );
 };
 

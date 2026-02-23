@@ -1,8 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google"; // Corrected import
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Analytics } from "@vercel/analytics/next";
 import { URL } from "url"; // Import URL for clarity, though Next.js handles it
+import UmamiAnalytics from "@/components/analytics/UmamiAnalytics";
+import PageWrapper from "@/components/pageWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,9 +88,9 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <PageWrapper>{children}</PageWrapper>
+          <UmamiAnalytics />
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   );

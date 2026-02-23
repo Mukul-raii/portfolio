@@ -1,29 +1,31 @@
-import Hero from "../components/Hero";
-import Docke from "../components/dock";
-import Projects from "../components/projects";
-import { Aboutme } from "../components/aboutme";
-import Contact from "../components/contact";
+import Hero from "../components/landingPage/HeroWithViews";
+import Projects from "@/components/project/projects";
+import Aboutme from "@/components/landingPage/aboutme";
 import Footer from "../components/footer";
+import Experience from "@/components/landingPage/experience";
+import Skills from "@/components/landingPage/skills";
+import SectionWrapper from "@/components/SectionWrapper";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 export default function Home() {
   return (
-    <div>
-      <Docke />
-      <header id="home" className="">
-        <Hero />
-      </header>
-      <section id="about" className="py-20">
+    <>
+      {/* Main Content */}
+
+      <header id="home">
+        <SectionWrapper>
+          <Hero />
+        </SectionWrapper>
         <Aboutme />
-      </section>
+      </header>
+      <Experience />
       <section id="projects" className="min-h-screen">
         <Projects />
       </section>
-      <section id="contact" className="min-h-screen">
-        <Contact />
-      </section>
-      <footer>
+      <Skills />
+      <SectionWrapper>
         <Footer />
-      </footer>
-    </div>
+      </SectionWrapper>
+    </>
   );
 }
