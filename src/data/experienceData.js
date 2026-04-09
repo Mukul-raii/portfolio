@@ -23,6 +23,29 @@ const experiences = [
       { name: "Docker", icon: "docker" },
     ],
   },
+  {
+    title: "Full Stack Developer & Cloud Automation Engineer",
+    company: "Next Bharat Ventures A SUZUKI INITIATIVE",
+    period: "April, 2026 - Present",
+    location: "IIT Hyderabad Technology Research Park, India - On-site",
+    type: "Internship",
+    logo: "https://nextbharat.ventures/wp-content/uploads/2024/04/logo.png",
+    logoColor: "bg-white",
+    achievements: [
+      "",],
+    technologies: [
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Express", icon: "express" },
+      { name: "Next.js", icon: "nextdotjs" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "Docker", icon: "docker" },
+      { name: "Azure", icon: "azure" },
+      { name: "n8n", icon: "n8n" },
+      
+
+    ],
+  },
 ];
 
 export default experiences;
